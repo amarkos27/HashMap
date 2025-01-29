@@ -42,19 +42,19 @@ const HashMap = () => {
     } else {
       grow();
     }
+  }
 
-    function grow() {
-      const list = entries();
-      buckets = Array(capacity() * 2);
-      len = 0;
+  function grow() {
+    const list = entries();
+    buckets = Array(capacity() * 2);
+    len = 0;
 
-      for (let entry of list) {
-        let [key, value] = entry;
-        set(key, value);
-      }
-
-      set(data.key, data.value);
+    for (let entry of list) {
+      let [key, value] = entry;
+      set(key, value);
     }
+
+    set(data.key, data.value);
   }
 
   function get(key) {
@@ -176,3 +176,4 @@ map.set('kite', 'pink');
 map.set('lion', 'golden');
 map.set('moon', 'silver');
 console.log(map.entries());
+console.log(map.length());
